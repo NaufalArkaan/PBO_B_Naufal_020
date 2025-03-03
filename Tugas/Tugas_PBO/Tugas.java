@@ -1,7 +1,7 @@
-package Tugas.Tugas_PBO;
+//package Tugas.Tugas_PBO;
 
 import java.util.Scanner;
-public class tugas {
+public class Tugas {
     public static void main(String[] args) {
         boolean repeat = true;
         while (repeat) {
