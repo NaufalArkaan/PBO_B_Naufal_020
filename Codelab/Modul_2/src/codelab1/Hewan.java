@@ -1,4 +1,4 @@
-package src;
+package src.codelab1;
 
 public class Hewan {
     String Nama;
