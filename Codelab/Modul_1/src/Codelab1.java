@@ -1,4 +1,4 @@
-//package Codelab.Modul_1;
+package src;
 
 import java.time.Year; //Digunakan untuk mengimport tahun saat ini.
 import java.util.Scanner; //Digunakan untuk membaca input dari pengguna.
