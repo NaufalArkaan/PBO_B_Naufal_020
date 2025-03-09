@@ -1,4 +1,3 @@
-package src;
 import java.util.Scanner;
 
 public class LoginSystem {
@@ -29,4 +28,3 @@ public class LoginSystem {
         }
     }
 }
-
