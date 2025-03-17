@@ -3,7 +3,7 @@ public class KarakterGame {
     private int kesehatan;
 
     public KarakterGame(String nama, int kesehatan){
-        this.nama = nama;
+        this.nama = nama; //mengisi atribut
         this.kesehatan = kesehatan;
     }
     public String getNama(){
