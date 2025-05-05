@@ -1,11 +1,15 @@
+package com.praktikum.main;
+import com.praktikum.users.*;
 import java.util.Scanner;
 
 public class LoginSystem {
     public static void main(String[] args) {
         while (true) {
-            Admin admin = new Admin("Naufal Arkaan", "020", "Admin020", "Password020");
-            Mahasiswa mahasiswa = new Mahasiswa("Naufal Arkaan", "202410370110020");
+            User user1 = new Admin("Naufal Arkaan", "020", "Admin020", "Password020");
+            User user2 = new Mahasiswa("Naufal Arkaan", "202410370110020");
             Scanner scanner = new Scanner(System.in);
+            System.out.println();
+            System.out.println("==== Selamat Datang Di Halaman Login System ====");
             System.out.println("Pilih login: ");
             System.out.println("1. Admin");
             System.out.println("2. Mahasiswa");
@@ -19,8 +23,9 @@ public class LoginSystem {
                 String username = scanner.nextLine();
                 System.out.print("Masukkan password: ");
                 String password = scanner.nextLine();
-                if (admin.login(username, password)) {
-                    admin.info();
+                if (user1.login(username, password)) {
+                    user1.info();
+                    user1.displayAppMenu();
                 } else {
                     System.out.println("Login Admin gagal! Username atau password salah.");
                 }
@@ -29,8 +34,9 @@ public class LoginSystem {
                 String nama = scanner.nextLine();
                 System.out.print("Masukkan NIM: ");
                 String nim = scanner.nextLine();
-                if (mahasiswa.login(nama, nim)) {
-                    mahasiswa.info();
+                if (user2.login(nama, nim)) {
+                    user2.info();
+                    user2.displayAppMenu();
                 } else {
                     System.out.println("Login Mahasiswa gagal! Nama atau NIM salah.");
                 }
