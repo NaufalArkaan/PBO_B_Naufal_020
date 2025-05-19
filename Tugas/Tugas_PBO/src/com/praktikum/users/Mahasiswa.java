@@ -1,5 +1,8 @@
 package com.praktikum.users;
 import com.praktikum.actions.MahasiswaActions;
+import com.praktikum.data.Item;
+import com.praktikum.main.LoginSystem;
+
 import java.util.Scanner;
 
 public class Mahasiswa  extends User implements MahasiswaActions {
@@ -32,11 +35,26 @@ public class Mahasiswa  extends User implements MahasiswaActions {
         System.out.println("Nama Barang = " + namaBarang);
         System.out.println("deskripsi Barang = " + deskripsiBarang);
         System.out.println("Lokasi Terakhir/Ditemukan = " + lokasiBarang);
+
+        Item item = new Item(namaBarang, deskripsiBarang, lokasiBarang, "Reported");
+        LoginSystem.reportedItems.add(item);
+        System.out.println("Laporan berhasil ditambahkan.");
+
     }
 
     @Override
     public void viewReportedItems(){
-        System.out.println(">> Fitur Lihat Laporan Belum Tersedia <<");
+        if(LoginSystem.reportedItems.isEmpty()){
+            System.out.println("Belum ada laporan barang.");
+        }else {
+            System.out.println("Daftar barang yang dilaporkan:");
+            for(Item item : LoginSystem.reportedItems){
+                if (item.getStatus().equals("Reported")) {
+                    System.out.println("- " + item.getItemName() + " | " + item.getDescription() + " | " + item.getLocation());
+                }
+            }
+        }
+
     }
 
     @Override
@@ -56,7 +74,7 @@ public class Mahasiswa  extends User implements MahasiswaActions {
                 viewReportedItems();
             } else if (pilihMenu == 0) {
                 System.out.println("Anda logout ...");
-                System.exit(0);
+                break;
             } else {
                 System.out.println("Inputan Invalid!");
             }

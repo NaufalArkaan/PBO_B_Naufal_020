@@ -80,12 +80,12 @@ public class ManajemenStok {
 
                         barang.setStok(barang.getStok() - jumlahDiambil);
                         System.out.println("Stok barang '" + barang.getNama() + "' berhasil dikurangi. Sisa stok: " + barang.getStok());
-                    } catch (InputMismatchException e) {
+                    } catch (InputMismatchException e) { //Jika input bukan angka.
                         System.out.println("Input harus berupa angka!");
                         scan.nextLine();
-                    } catch (IndexOutOfBoundsException e) {
+                    } catch (IndexOutOfBoundsException e) {  //Jika indeks yang dimasukkan tidak valid (di luar jangkauan daftar).
                         System.out.println("Indeks tidak valid!");
-                    } catch (StokTidakCukupException e) {
+                    } catch (StokTidakCukupException e) {  //Jika stok tidak cukup untuk dikurangi.
                         System.out.println(e.getMessage());
                     }
                     break;
